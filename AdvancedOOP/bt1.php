@@ -20,11 +20,16 @@
     {
         abstract public function makeSound();
     }
-    class Tiger extends Animal
+    class Tiger extends Animal implements Edible
     {
         public function makeSound()
         {
             return "Tiger: roarrrrr!";
+        }
+        
+        public function howToEat()
+        {
+            return "could be friedssssss";
         }
 
     }
@@ -47,11 +52,8 @@
     $animals[1] = new Chicken();
 
     foreach ($animals as $animal) {
-        echo $animal->makeSound() . '<br>';
-        if ($animal instanceof Chicken) {
-            echo $animal->howToEat(). '
- ';
-        }
+        echo $animal->makeSound() . '<br>'.$animal->howToEat()."</br>";
+        
     }
     ?>
 
