@@ -15,15 +15,18 @@
     function soNhonhat($saveNum){
     $index = count($saveNum);
     $min = $saveNum[0];
+
     for($i = 0;$i < $index; $i++ ){
        if($saveNum[$i] < $min){
            $min = $saveNum[$i];
+           
        }
     }
        echo $min;
+       echo "</br>".$index;
     }
     
-     $saveNum = array(4,1,8,6,5);
+     $saveNum = array(4 ,6,1);
     soNhonhat($saveNum);
     ?>
 </body>
