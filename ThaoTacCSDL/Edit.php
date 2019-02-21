@@ -47,15 +47,16 @@ div {
 <div style="width:500px;">
 <!-- // add infor -->
 <?php 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $idP = $_GET["id"];
     $name = $_POST["stname"];
     $address = $_POST["staddress"];
     $email = $_POST["stemail"];
     $img = $_POST["stimages"];
-
-    $sql = "INSERT INTO student (studentName,studentAddress,studentEmail,studentImager) VALUES (?,?,?,?)";
+    $sql = "Update student SET studentName=?,	studentAddress=?,	studentEmail=?,studentImager=? where studentId=?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$name, $address, $email, $img]);
+    $stmt->execute([$name, $address, $email, $img,$idP]);
     echo "thành công";
     header("Location: http://localhost/bootcamp-PHP/ThaoTacCSDL/index.php");
 }
