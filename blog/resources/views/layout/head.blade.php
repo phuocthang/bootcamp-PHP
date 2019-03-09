@@ -50,7 +50,35 @@
                                     <li class="nav-item"><a class="nav-link" href="{{ route('blog.admin') }}">Admin</a></li>
 								</ul>
 								<ul class="nav navbar-nav navbar-right ml-auto">
-									<li class="nav-item"><a href="#" class="search"><i class="lnr lnr-magnifier"></i></a></li>
+									<li class="nav-item"><a href="#" class="search">
+											<form class="navbar-form navbar-left" action="">
+
+													@csrf
+												
+													  <div class="row">
+												
+														  <div class="col-8">
+												
+															  <div class="form-group">
+												
+																  <input type="text" class="form-control" placeholder="Search">
+												
+															  </div>
+												
+														  </div>
+												
+														  <div class="col-4">
+												
+															  <button type="submit" class="btn btn-default">Tìm kiếm</button>
+												
+														  </div>
+												
+													  </div>
+												
+												  </form>
+												</li>			
+									</a>
+								</li>
 								</ul>
 							</div> 
 						</div>
